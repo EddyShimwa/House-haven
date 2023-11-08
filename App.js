@@ -2,7 +2,8 @@ import * as React from 'react';
 import { Text, View } from 'react-native'; 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
+// import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 
 
 const Tab = createBottomTabNavigator();
@@ -51,8 +52,15 @@ function Favorites() {
 
 const App = () => {
   return (
-    <NavigationContainer> 
-      <Tab.Navigator initialRouteName="Home">
+      <NavigationContainer>
+      <Tab.Navigator initialRouteName="Home"
+            tabBarOptions={{
+              style: {
+                
+                backgroundColor: 'red', 
+              },
+            }}
+      >
         <Tab.Screen
           name="Home"
           component={HomeScreen}
@@ -60,6 +68,9 @@ const App = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="home" size={size} color={color} />
             ),
+            tabBarStyle: { backgroundColor: '#2f2f2f', borderRadius: 12, height: 60, padding: 10, margin: 20},
+            tabBarLabel: '',
+            tabBarActiveTintColor: '#fff',
           }
           
         }
@@ -72,6 +83,10 @@ const App = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="heart" size={size} color={color} />
             ),
+            tabBarStyle: {backgroundColor: '#2f2f2f', borderRadius: 12, height: 60, padding: 10, margin: 20},
+
+            tabBarLabel: '',
+            tabBarActiveTintColor: '#fff',
           }}
         />
 
@@ -82,6 +97,9 @@ const App = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="bell" size={size} color={color} />
             ),
+            tabBarStyle: { backgroundColor: '#2f2f2f', borderRadius: 12, height: 60, padding: 10, margin: 20},
+            tabBarLabel: '',
+            tabBarActiveTintColor: '#fff',
           }}
         />
 
@@ -92,10 +110,13 @@ const App = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="info" size={size} color={color} />
             ),
+            tabBarStyle: { backgroundColor: '#2f2f2f', borderRadius: 12, height: 60, padding: 10, margin: 20},
+            tabBarLabel: '',
+            tabBarActiveTintColor: '#fff',
           }}
         />
       </Tab.Navigator>
-    </NavigationContainer>
+      </NavigationContainer>
   );
 }
 
