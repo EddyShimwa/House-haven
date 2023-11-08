@@ -1,20 +1,68 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react'; 
+import { Text, View } from 'react-native'; 
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-export default function App() {
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
   );
 }
+import { NavigationContainer } from '@react-navigation/native'; 
+  
+function HomeScreen() { 
+  return ( 
+    <View style={{ flex: 1, alignItems: 'center',  
+                   justifyContent: 'center' }}> 
+        <Text>Home pages</Text> 
+    </View> 
+  ); 
+} 
+  
+function NotificationsScreen() { 
+  return ( 
+    <View style={{ flex: 1, alignItems: 'center',  
+                   justifyContent: 'center' }}> 
+      <Text>Notifications Page</Text> 
+    </View> 
+  ); 
+} 
+  
+function AboutScreen() { 
+  return ( 
+    <View style={{ flex: 1, alignItems: 'center',  
+                   justifyContent: 'center' }}> 
+      <Text>About Page</Text> 
+    </View> 
+  ); 
+} 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+function Favorites() { 
+  return ( 
+    <View style={{ flex: 1, alignItems: 'center',  
+                   justifyContent: 'center' }}> 
+      <Text>Favorites Page</Text> 
+    </View> 
+  ); 
+} 
+// const Drawer = createDrawerNavigator(); 
+  
+const App = () => { 
+  return ( 
+    <NavigationContainer> 
+      <Tab.Navigator initialRouteName="Home"> 
+        <Tab.Screen name="Home" component={HomeScreen} /> 
+        <Tab.Screen name="Favz" component={Favorites} /> 
+        <Tab.Screen name="Notifications" 
+                       component={NotificationsScreen} /> 
+        <Tab.Screen name="About" component={AboutScreen} /> 
+      </Tab.Navigator> 
+    </NavigationContainer> 
+  ); 
+}
+
+export default App;
