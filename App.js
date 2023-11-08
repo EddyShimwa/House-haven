@@ -2,20 +2,13 @@ import * as React from 'react';
 import { Text, View } from 'react-native'; 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 
 
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
-    </Tab.Navigator>
-  );
-}
-import { NavigationContainer } from '@react-navigation/native'; 
-  
+
+
 function HomeScreen() { 
   return ( 
     <View style={{ flex: 1, alignItems: 'center',  
@@ -43,6 +36,8 @@ function AboutScreen() {
   ); 
 } 
 
+
+
 function Favorites() { 
   return ( 
     <View style={{ flex: 1, alignItems: 'center',  
@@ -52,10 +47,11 @@ function Favorites() {
   ); 
 } 
 // const Drawer = createDrawerNavigator(); 
-  
+
+
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer> 
       <Tab.Navigator initialRouteName="Home">
         <Tab.Screen
           name="Home"
@@ -64,7 +60,9 @@ const App = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="home" size={size} color={color} />
             ),
-          }}
+          }
+          
+        }
         />
 
         <Tab.Screen
