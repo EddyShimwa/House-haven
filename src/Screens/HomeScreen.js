@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import HomePageHeader from "../Components/HomePageHeader";
 import { Icon, SearchBar } from "react-native-elements";
-
+import Categories from "../Components/Categories";
+import Houses from "../Components/Houses";
 const HomeScreen = () => {
   const [searchText, setSearchText] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -42,9 +43,9 @@ const HomeScreen = () => {
         </TouchableOpacity>
     
       </View>
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Home pages</Text>
-      </View>
+
+      <Categories />
+      <Houses />
     </View>
   );
 };
