@@ -1,65 +1,26 @@
-import * as React from 'react'; 
-import { Text, View } from 'react-native'; 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { NavigationContainer } from '@react-navigation/native';
+import * as React from "react";
+import { Text, View } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Icon from "react-native-vector-icons/FontAwesome";
+import { NavigationContainer } from "@react-navigation/native";
 // import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-
+import HomeScreen from "./src/Screens/HomeScreen";
+import NotificationsScreen from "./src/Screens/NotificationsScreen";
+import AboutScreen from "./src/Screens/AboutScreen";
+import Favorites from "./src/Screens/FavoritesScreen";
 
 const Tab = createBottomTabNavigator();
 
-
-
-function HomeScreen() { 
-  return ( 
-    <View style={{ flex: 1, alignItems: 'center',  
-                   justifyContent: 'center' }}> 
-        <Text>Home pages</Text> 
-    </View> 
-  ); 
-} 
-  
-function NotificationsScreen() { 
-  return ( 
-    <View style={{ flex: 1, alignItems: 'center',  
-                   justifyContent: 'center' }}> 
-      <Text>Notifications Page</Text> 
-    </View> 
-  ); 
-} 
-  
-function AboutScreen() { 
-  return ( 
-    <View style={{ flex: 1, alignItems: 'center',  
-                   justifyContent: 'center' }}> 
-      <Text>About Page</Text> 
-    </View> 
-  ); 
-} 
-
-
-
-function Favorites() { 
-  return ( 
-    <View style={{ flex: 1, alignItems: 'center',  
-                   justifyContent: 'center' }}> 
-      <Text>Favorites Page</Text> 
-    </View> 
-  ); 
-} 
-// const Drawer = createDrawerNavigator(); 
-
-
 const App = () => {
   return (
-      <NavigationContainer>
-      <Tab.Navigator initialRouteName="Home"
-            tabBarOptions={{
-              style: {
-                
-                backgroundColor: 'red', 
-              },
-            }}
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName="Home"
+        tabBarOptions={{
+          style: {
+            backgroundColor: "red",
+          },
+        }}
       >
         <Tab.Screen
           name="Home"
@@ -68,25 +29,37 @@ const App = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="home" size={size} color={color} />
             ),
-            tabBarStyle: { backgroundColor: '#2f2f2f', borderRadius: 12, height: 60, padding: 10, margin: 20},
-            tabBarLabel: '',
-            tabBarActiveTintColor: '#fff',
-          }
-          
-        }
+            tabBarStyle: {
+              backgroundColor: "#2f2f2f",
+              borderRadius: 12,
+              height: 60,
+              padding: 10,
+              margin: 20,
+            },
+            tabBarLabel: "",
+            tabBarActiveTintColor: "#fff",
+            headerShown: false,
+          }}
         />
 
         <Tab.Screen
-          name="Favz"
+          name=" "
           component={Favorites}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon name="heart" size={size} color={color} />
             ),
-            tabBarStyle: {backgroundColor: '#2f2f2f', borderRadius: 12, height: 60, padding: 10, margin: 20},
+            tabBarStyle: {
+              backgroundColor: "#2f2f2f",
+              borderRadius: 12,
+              height: 60,
+              padding: 10,
+              margin: 20,
+            },
 
-            tabBarLabel: '',
-            tabBarActiveTintColor: '#fff',
+            tabBarLabel: "",
+            tabBarActiveTintColor: "#fff",
+            headerShown: false,
           }}
         />
 
@@ -97,9 +70,16 @@ const App = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="bell" size={size} color={color} />
             ),
-            tabBarStyle: { backgroundColor: '#2f2f2f', borderRadius: 12, height: 60, padding: 10, margin: 20},
-            tabBarLabel: '',
-            tabBarActiveTintColor: '#fff',
+            tabBarStyle: {
+              backgroundColor: "#2f2f2f",
+              borderRadius: 12,
+              height: 60,
+              padding: 10,
+              margin: 20,
+            },
+            tabBarLabel: "",
+            tabBarActiveTintColor: "#fff",
+            headerShown: false,
           }}
         />
 
@@ -110,14 +90,21 @@ const App = () => {
             tabBarIcon: ({ color, size }) => (
               <Icon name="info" size={size} color={color} />
             ),
-            tabBarStyle: { backgroundColor: '#2f2f2f', borderRadius: 12, height: 60, padding: 10, margin: 20},
-            tabBarLabel: '',
-            tabBarActiveTintColor: '#fff',
+            tabBarStyle: {
+              backgroundColor: "#2f2f2f",
+              borderRadius: 12,
+              height: 60,
+              padding: 10,
+              margin: 20,
+            },
+            tabBarLabel: "",
+            tabBarActiveTintColor: "#fff",
+            headerShown: false,
           }}
         />
       </Tab.Navigator>
-      </NavigationContainer>
+    </NavigationContainer>
   );
-}
+};
 
 export default App;
