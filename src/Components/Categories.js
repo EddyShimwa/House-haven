@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-const HomePageHeader = () => {
+const Categories = () => {
   return (
     <View
       style={{
@@ -35,4 +35,4 @@ const HomePageHeader = () => {
   );
 };
 
-export default HomePageHeader;
+export default Categories;

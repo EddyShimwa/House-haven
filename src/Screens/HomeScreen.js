@@ -14,8 +14,6 @@ const HomeScreen = () => {
   };
 
   const mockSearch = (searchText) => {
-    // Mock search results based on the input
-    // Replace this with your actual search logic
     return [
       "Result 1 for " + searchText,
       "Result 2 for " + searchText,
@@ -25,24 +23,27 @@ const HomeScreen = () => {
   return (
     <View style={{ flex: 1, backgroundColor: "red" }}>
       <HomePageHeader />
-      <View style={{ width: "80%", color: "red", padding: 10, display: 'flex', flexDirection: 'row' }}>
+      <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+      <View style={{ width: "80%", color: "red", padding: 10}}>
         <SearchBar
-          placeholder="Search..."
+          placeholder="Search Here"
           onChangeText={(text) => setSearchText(text)}
           value={searchText}
           onSubmitEditing={handleSearch}
           cancelButtonTitle="Cancel"
+          style={{backgroundColor: 'white', borderRadius: 10}}
         />
+          </View>
         <TouchableOpacity>
           <Image
             source={require("../assets/images-icons/filter.png")} // Replace with the correct path to your custom icon
-            style={{ width: 30, height: 30, marginRight: 10 }}
+            style={{ width: 60, height: 60, marginRight: 8 }}
           />
         </TouchableOpacity>
+    
       </View>
-
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Home page</Text>
+        <Text>Home pages</Text>
       </View>
     </View>
   );
