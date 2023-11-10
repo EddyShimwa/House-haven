@@ -9,7 +9,6 @@ const HomeScreen = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = () => {
-    // Simulate a search operation (replace with your actual search logic)
     const results = mockSearch(searchText);
     setSearchResults(results);
   };
@@ -22,12 +21,12 @@ const HomeScreen = () => {
     ];
   };
   return (
-    <View style={{ flex: 1, backgroundColor: "red" }}>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
       <HomePageHeader />
       <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
       <View style={{ width: "80%", color: "red", padding: 10}}>
         <SearchBar
-          placeholder="Search Here"
+          placeholder="Search Here please..."
           onChangeText={(text) => setSearchText(text)}
           value={searchText}
           onSubmitEditing={handleSearch}

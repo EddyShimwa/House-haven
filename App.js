@@ -3,13 +3,24 @@ import { Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { NavigationContainer } from "@react-navigation/native";
-// import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import HomeScreen from "./src/Screens/HomeScreen";
 import NotificationsScreen from "./src/Screens/NotificationsScreen";
 import AboutScreen from "./src/Screens/AboutScreen";
 import Favorites from "./src/Screens/FavoritesScreen";
+import HouseDetailsScreen from "./src/Screens/HouseDetailsScreen";
+import { createStackNavigator, useNavigation } from "@react-navigation/stack";
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+const HomeStack = () => {
+   return (
+    <Stack.Navigator headerMode="none">
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="HouseDetails" component={HouseDetailsScreen} />
+    </Stack.Navigator>
+   )
+}
 
 const App = () => {
   return (
@@ -24,7 +35,7 @@ const App = () => {
       >
         <Tab.Screen
           name="Home"
-          component={HomeScreen}
+          component={HomeStack}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon name="home" size={size} color={color} />

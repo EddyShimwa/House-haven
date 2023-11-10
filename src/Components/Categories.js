@@ -5,30 +5,31 @@ const Categories = () => {
   const categories = ['Offices', 'Houses', 'Apartments', 'Homes', 'Ghettos'];
 
   return (
-    
+    <>
+    <Text style={{ color: "black", fontSize: 20, marginLeft: 30 }}>Categories</Text>
     <ScrollView
       horizontal={true} // Enable horizontal scrolling
       contentContainerStyle={{ padding: 20 }}
-      style={{ overflow: 'hidden', height: 20 }} 
+      style={{ overflow: 'hidden', height: 20, marginLeft: 15 }} 
     >
       {categories.map((category, index) => (
         <Text
           key={index}
           style={{
-            color: "white",
-            padding: 20,
+            color: "black",
+            padding: 12,
             borderWidth: 1,
-            borderColor: "white",
+            borderColor: "black",
             borderRadius: 15,
             marginRight: 14,
-            height: 60,
+            height: 45,
           }}
         >
           {category}
         </Text>
       ))}
     </ScrollView>
-    
+    </>
   );
 };
 
