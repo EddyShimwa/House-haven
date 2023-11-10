@@ -6,7 +6,7 @@ const Categories = () => {
 
   return (
     <>
-    <Text style={{ color: "black", fontSize: 20, marginLeft: 30 }}>Categories</Text>
+    <Text style={{ color: "black", fontSize: 20, marginLeft: 30, fontWeight: 'bold' }}>Categories</Text>
     <ScrollView
       horizontal={true} // Enable horizontal scrolling
       contentContainerStyle={{ padding: 20 }}

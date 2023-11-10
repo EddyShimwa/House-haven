@@ -12,11 +12,11 @@ const HomePageHeader = () => {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        marginTop: 40,
+        marginTop: 20,
       }}
     >
       <View>
-        <Text style={{ color: "black", fontSize: 20 }}>Location</Text>
+        <Text style={{ color: "black", fontSize: 20, fontWeight: 'bold' }}>Location</Text>
         <View
           style={{
             display: "flex",
@@ -31,7 +31,7 @@ const HomePageHeader = () => {
           <Text style={{ color: "black", fontSize: 20, fontWeight: 'bold' }}>California, USA</Text>
         </View>
       </View>
-      <Icon name="bell" style={{ color: "black", fontSize: 30, opacity: 16 }} />
+      <Icon name="bell" style={{ color: "black", fontSize: 30 }} />
     </View>
   );
 };

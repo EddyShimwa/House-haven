@@ -19,14 +19,5 @@ const HouseDetailsScreen = ({ route }) => {
   );
 };
 
-// HouseDetailsScreen.navigationOptions = ({ navigation }) => ({
-//     headerLeft: () => (
-//       <TouchableOpacity
-//         style={{ marginLeft: 15 }}
-//         onPress={() => navigation.goBack()}
-//       >
-//         <Text style={{ color: "blue" }}>Back</Text>
-//       </TouchableOpacity>
-//     ),
-//   });
+
 export default HouseDetailsScreen;
