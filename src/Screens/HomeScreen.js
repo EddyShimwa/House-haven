@@ -24,20 +24,20 @@ const HomeScreen = () => {
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <HomePageHeader />
       <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-      <View style={{ width: "80%", padding: 10, marginLeft: 25}}>
+      <View style={{ width: "80%", padding: 10, marginLeft: 20}}>
         <SearchBar
           placeholder="Search Here pleasef..."
           onChangeText={(text) => setSearchText(text)}
           value={searchText}
           onSubmitEditing={handleSearch}
           cancelButtonTitle="Cancel"
-          inputContainerStyle={{ borderBottomWidth: 0, borderTopWidth: 0, backgroundColor: 'white', borderRadius: 10, height: 35, }}
+          inputContainerStyle={{ borderBottomWidth: 0, borderTopWidth: 0, backgroundColor: 'white', borderRadius: 10, height: 35 }}
           containerStyle={{ borderWidth: 1, backgroundColor: 'white', borderRadius: 10, width: '90%', }}
         />
           </View>
-        <TouchableOpacity style={{ marginRight: 20}}>
+        <TouchableOpacity style={{ marginRight: 20, borderWidth: 2, borderRadius: 10}}>
           <Image
-            source={require("../assets/images-icons/filter.png")} // Replace with the correct path to your custom icon
+            source={require("../assets/images-icons/filter.png")}
             style={{ width: 60, height: 60, marginRight: 20 }}
           />
         </TouchableOpacity>

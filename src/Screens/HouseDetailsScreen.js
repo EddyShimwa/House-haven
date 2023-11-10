@@ -11,10 +11,13 @@ const HouseDetailsScreen = ({ route }) => {
   };
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>House Details for ID: {houseId}</Text>
       <TouchableOpacity onPress={handleBack}>
         <Text style={{ color: "blue", marginTop: 10 }}>Go Back to Home</Text>
       </TouchableOpacity>
+      <Text>House Details for ID: {houseId}</Text>
+      <View styles={}>
+        
+      </View>
     </View>
   );
 };
