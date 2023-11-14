@@ -11,14 +11,22 @@ import HouseDetailsScreen from "./src/Screens/HouseDetailsScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const Tab = createBottomTabNavigator();
-const HomeStack = createStackNavigator();
-
-const HomeStackScreen = () => (
-  <HomeStack.Navigator initialRouteName="Home">
-    <HomeStack.Screen name="Home" component={HomeScreen} />
-    <HomeStack.Screen name="HouseDetails" component={HouseDetailsScreen} />
-  </HomeStack.Navigator>
-);
+const Stack = createStackNavigator();
+const HomeStack = () => {
+  return (
+    <Stack.Navigator headerMode="none">
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+      />
+      <Stack.Screen
+        name="HouseDetails"
+        component={HouseDetailsScreen}
+        options={{ tabBarVisible: false }}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const App = () => {
   return (
@@ -33,7 +41,7 @@ const App = () => {
       >
         <Tab.Screen
           name="Home"
-          component={HomeStackScreen}
+          component={HomeStack}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon name="home" size={size} color={color} />
