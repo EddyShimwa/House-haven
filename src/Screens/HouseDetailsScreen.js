@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, ImageBackground } from "react-native";
+import { View, Text, TouchableOpacity, ImageBackground, Image, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const HouseDetailsScreen = ({ route }) => {
@@ -12,7 +12,7 @@ const HouseDetailsScreen = ({ route }) => {
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <View style={{ color: "blue", marginTop: 30 }}>
+      <View style={{ marginTop: 30 }}>
       </View>
 
       <ImageBackground
@@ -27,12 +27,59 @@ const HouseDetailsScreen = ({ route }) => {
       >
 
         <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%', padding: 20}}>
-            <TouchableOpacity onPress={handleBack} style={{borderWidth: 2, borderRadius: 10, width: 60 }}>
-                {/* <Text style={{ color: "#000", padding: 5, backgroundColor: "#fff"}}>Back</Text> */}
-            </TouchableOpacity>
-            <TouchableOpacity onPress={handleBack} style={{borderWidth: 2, borderRadius: 10 }}>
-                {/* <Text style={{ color: "#000", padding: 5, borderWidth: 2, fontSize: 20 }}>...</Text> */}
-            </TouchableOpacity>
+        <TouchableOpacity
+  onPress={handleBack}
+  style={{
+    padding: 12,
+    borderWidth: 1,
+    width: 60,
+    backgroundColor: 'white',
+    borderRadius: 16,
+    alignItems: 'center',
+    borderColor: 'white',
+    ...Platform.select({
+      ios: {
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
+      },
+      android: {
+        elevation: 4,
+      },
+    }),
+  }}
+>
+  <Image style={{ width: 20, height: 12 }} source={require("../assets/images-icons/backArrow.png")} />
+</TouchableOpacity>
+
+<TouchableOpacity
+  onPress={handleBack}
+  style={{
+    padding: 12,
+    borderWidth: 1,
+    width: 60,
+    backgroundColor: 'white',
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: 'white',
+    // Add box shadow styles based on the platform
+    ...Platform.select({
+      ios: {
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
+      },
+      android: {
+        elevation: 4,
+      },
+    }),
+  }}
+>
+  <Image style={{ width: 26, height: 10 }} source={require("../assets/images-icons/threeDots.png")} />
+</TouchableOpacity>
         </View>
         <View
           style={{
