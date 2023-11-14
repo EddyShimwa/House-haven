@@ -8,19 +8,17 @@ import NotificationsScreen from "./src/Screens/NotificationsScreen";
 import AboutScreen from "./src/Screens/AboutScreen";
 import Favorites from "./src/Screens/FavoritesScreen";
 import HouseDetailsScreen from "./src/Screens/HouseDetailsScreen";
-import { createStackNavigator, useNavigation } from "@react-navigation/stack";
+import { createStackNavigator } from "@react-navigation/stack";
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
+const HomeStack = createStackNavigator();
 
-const HomeStack = () => {
-   return (
-    <Stack.Navigator headerMode="none">
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="HouseDetails" component={HouseDetailsScreen} />
-    </Stack.Navigator>
-   )
-}
+const HomeStackScreen = () => (
+  <HomeStack.Navigator initialRouteName="Home">
+    <HomeStack.Screen name="Home" component={HomeScreen} />
+    <HomeStack.Screen name="HouseDetails" component={HouseDetailsScreen} />
+  </HomeStack.Navigator>
+);
 
 const App = () => {
   return (
@@ -35,7 +33,7 @@ const App = () => {
       >
         <Tab.Screen
           name="Home"
-          component={HomeStack}
+          component={HomeStackScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon name="home" size={size} color={color} />
