@@ -89,9 +89,6 @@ const HouseDetailsScreen = ({ route }) => {
             width: "100%",
           }}
         >
-          <Text style={{ color: "#fff" }}>
-            House Details for ID: {houseId}
-          </Text>
         </View>
       </ImageBackground>
      
@@ -99,14 +96,28 @@ const HouseDetailsScreen = ({ route }) => {
         style={{
           flex: 1,
           backgroundColor: "red",
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
           width: "100%",
           borderTopLeftRadius: 50,
           borderTopRightRadius: 50,
+          
         }}
       >
-        <Text>For Details Description</Text>
+        <View style={{ alignItems: 'flex-start', marginLeft: 30, marginBottom: 20}}>
+            <Text style={{fontSize: 25}}>Classic House</Text>
+            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+                <Image source={require("../assets/images-icons/location.png")} style={{ width: 14, height: 18, marginRight: 5 }} />
+                 <Text>California, USA</Text>
+            </View>
+        </View>
+        <View style={{ alignItems: 'flex-start', marginLeft: 30}}>
+            <Text style={{fontSize: 25}}>House Details</Text>
+            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignContent: 'center'}}>
+               <Text> Praesent eu imperdiet ligula. Aliquam erat volutpat. Sed sollicitudin, libero a commodo consequat, ipsum lectus venenatis neque, in dapibus eros nibh vitae metus. Nam in nulla dolor. Nam ac ligula et est faucibus faucibus. Duis aliquam placerat dui, non rhoncus erat. Donec ut ipsum non nulla efficitur accumsan ut vel lorem. </Text>
+            </View>
+        </View>
+        
       </View>
     </View>
   );
