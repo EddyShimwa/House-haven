@@ -12,18 +12,31 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+
+const AboutStack = createStackNavigator();
+
+const AboutStackScreen = () => (
+  <AboutStack.Navigator>
+    <AboutStack.Screen
+      name="About"
+      component={AboutScreen}
+      options={{ headerShown: false }}
+    />
+  </AboutStack.Navigator>
+);
+
 const HomeStack = () => {
   return (
     <Stack.Navigator headerMode="none">
+      <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen
-        name="Home"
-        component={HomeScreen}
-      />
-      <Stack.Screen
-        name="HouseDetails"
-        component={HouseDetailsScreen}
-        options={{ tabBarVisible: false }}
-      />
+  name="HouseDetails"
+  component={HouseDetailsScreen}
+  options={{
+    tabBarVisible: false, // Hide the bottom tab bar for this screen
+  }}
+/>
+
     </Stack.Navigator>
   );
 };
@@ -33,11 +46,6 @@ const App = () => {
     <NavigationContainer>
       <Tab.Navigator
         initialRouteName="Home"
-        tabBarOptions={{
-          style: {
-            backgroundColor: "red",
-          },
-        }}
       >
         <Tab.Screen
           name="Home"
@@ -94,6 +102,9 @@ const App = () => {
               padding: 10,
               margin: 20,
             },
+            tabBarBadge: 2,
+            tabBarBadgeStyle: {color: 'white', width: 10, height: 15, backgroundColor: 'green', borderRadius: 50, alignItems: 'center', justifyContent: 'center'},
+            
             tabBarLabel: "",
             tabBarActiveTintColor: "#fff",
             headerShown: false,
@@ -117,8 +128,32 @@ const App = () => {
             tabBarLabel: "",
             tabBarActiveTintColor: "#fff",
             headerShown: false,
+            
           }}
         />
+
+<Tab.Screen
+  name="detaye"
+  component={HouseDetailsScreen}
+  options={{
+    tabBarIcon: ({ color, size }) => (
+      <Icon name="info" size={size} color={color} />
+    ),
+    tabBarStyle: {
+      backgroundColor: "#2f2f2f",
+      borderRadius: 12,
+      height: 60,
+      padding: 10,
+      margin: 20,
+    },
+    tabBarLabel: "",
+    tabBarActiveTintColor: "#fff",
+    headerShown: false,
+    tabBarVisible: false, // Hide the bottom tab bar for this screen
+  }}
+/>
+
+
       </Tab.Navigator>
     </NavigationContainer>
   );
