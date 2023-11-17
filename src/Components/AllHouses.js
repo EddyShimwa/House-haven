@@ -23,7 +23,7 @@ const Houses = ({ houseProps = { width: 300, height: 290, title: "NearBy Places"
       <View>
         <Text style={{ color: "black", fontSize: 20, marginLeft: 30, fontWeight: 'bold' }}>{houseProps.title}</Text>
         <ScrollView
-          horizontal={true} // Enable horizontal scrolling
+          horizontal={true} 
           contentContainerStyle={{ padding: 20 }}
           style={{ width: "100%" }}
         >
