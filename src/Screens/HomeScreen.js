@@ -6,7 +6,7 @@ import Categories from "../Components/Categories";
 import Houses from "../Components/AllHouses";
 const HomeScreen = () => {
   const [searchText, setSearchText] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  // const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = () => {
     const results = mockSearch(searchText);
