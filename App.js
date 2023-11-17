@@ -15,15 +15,6 @@ const Stack = createStackNavigator();
 
 const AboutStack = createStackNavigator();
 
-const AboutStackScreen = () => (
-  <AboutStack.Navigator>
-    <AboutStack.Screen
-      name="About"
-      component={AboutScreen}
-      options={{ headerShown: false }}
-    />
-  </AboutStack.Navigator>
-);
 
 const HomeStack = () => {
   return (
@@ -152,8 +143,6 @@ const App = () => {
     tabBarVisible: false,
   }}
 />
-
-
       </Tab.Navigator>
     </NavigationContainer>
   );
