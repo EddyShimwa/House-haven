@@ -149,7 +149,7 @@ const App = () => {
     tabBarLabel: "",
     tabBarActiveTintColor: "#fff",
     headerShown: false,
-    tabBarVisible: false, // Hide the bottom tab bar for this screen
+    tabBarVisible: false,
   }}
 />
 
