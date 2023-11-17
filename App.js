@@ -13,9 +13,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-const AboutStack = createStackNavigator();
-
-
 const HomeStack = () => {
   return (
     <Stack.Navigator headerMode="none">
