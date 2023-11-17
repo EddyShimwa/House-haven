@@ -27,7 +27,6 @@ const HomeStack = () => {
     tabBarVisible: false,
   }}
 />
-
     </Stack.Navigator>
   );
 };
