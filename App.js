@@ -24,7 +24,7 @@ const HomeStack = () => {
   name="HouseDetails"
   component={HouseDetailsScreen}
   options={{
-    tabBarVisible: false, // Hide the bottom tab bar for this screen
+    tabBarVisible: false,
   }}
 />
 
