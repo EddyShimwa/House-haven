@@ -7,7 +7,6 @@ const HomePageHeader = () => {
   return (
     <View
       style={{
-        // backgroundColor: "blue",
         padding: 30,
         display: "flex",
         flexDirection: "row",

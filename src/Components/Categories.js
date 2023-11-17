@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { Platform } from "react-native";
 
-
-
 const Categories = () => {
   const categories = ['Offices', 'Houses', 'Apartments', 'Homes', 'Ghettos'];
   const [selectedCategory, setSelectedCategory] = useState(null);
