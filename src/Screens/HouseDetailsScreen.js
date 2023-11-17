@@ -91,7 +91,6 @@ const HouseDetailsScreen = ({ route }) => {
               alignItems: "center",
               justifyContent: "center",
               borderColor: "white",
-              // Add box shadow styles based on the platform
               ...Platform.select({
                 ios: {
                   shadowColor: "black",
