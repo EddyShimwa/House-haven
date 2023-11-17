@@ -30,7 +30,7 @@ const Houses = ({ houseProps = { width: 300, height: 290, title: "NearBy Places"
           {houseImages.map((houseImage, index) => (
             <TouchableOpacity
               key={index}
-              onPress={() => handleHousePress(index + 1)} // You can use a unique ID for each house
+              onPress={() => handleHousePress(index + 1)} 
             >
               <Image
                 key={index}
