@@ -33,8 +33,7 @@ const HouseDetailsScreen = ({ route }) => {
       <View style={{ marginTop: 30 }}></View>
 
       <ImageBackground
-        source={require("../assets/images-icons/house1.jpg")} // Replace with the path to your image
-        style={{
+        source={require("../assets/images-icons/house1.jpg")}         style={{
           flex: 1,
           alignItems: "center",
           justifyContent: "center",
