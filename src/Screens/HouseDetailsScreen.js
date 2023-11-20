@@ -28,96 +28,122 @@ const HouseDetailsScreen = ({ route }) => {
     navigation.goBack();
   };
 
+  const handleAddToFavorites = () => {
+    console.log('You added this house to your favorites!')
+  }
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <View style={{ marginTop: 30 }}></View>
 
       <ImageBackground
-        source={require("../assets/images-icons/house1.jpg")}         style={{
+      source={require("../assets/images-icons/house1.jpg")}
+      style={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%",
+        marginBottom: -50,
+      }}
+    >
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          width: "100%",
+          padding: 20,
+          position: 'absolute',
+          top: 20,
+        }}
+      >
+        {/* Back Button */}
+        <TouchableOpacity
+          onPress={handleBack}
+          style={{
+            padding: 12,
+            borderWidth: 1,
+            width: 60,
+            backgroundColor: "white",
+            borderRadius: 16,
+            alignItems: "center",
+            borderColor: "white",
+            ...Platform.select({
+              ios: {
+                shadowColor: "black",
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.2,
+                shadowRadius: 4,
+              },
+              android: {
+                elevation: 4,
+              },
+            }),
+          }}
+        >
+          <Image
+            style={{ width: 20, height: 12 }}
+            source={require("../assets/images-icons/backArrow.png")}
+          />
+        </TouchableOpacity>
+
+        {/* Three Dots Button */}
+        <TouchableOpacity
+          onPress={handleBack}
+          style={{
+            padding: 12,
+            borderWidth: 1,
+            width: 60,
+            backgroundColor: "white",
+            borderRadius: 16,
+            alignItems: "center",
+            justifyContent: "center",
+            borderColor: "white",
+            ...Platform.select({
+              ios: {
+                shadowColor: "black",
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.2,
+                shadowRadius: 4,
+              },
+              android: {
+                elevation: 4,
+              },
+            }),
+          }}
+        >
+          <Image
+            style={{ width: 26, height: 10 }}
+            source={require("../assets/images-icons/threeDots.png")}
+          />
+        </TouchableOpacity>
+      </View>
+
+      {/* Add to Favorites Button */}
+      <TouchableOpacity
+        onPress={handleAddToFavorites}
+        style={{
+          position: 'absolute',
+          bottom: 20,
+          right: 20,
+          backgroundColor: "transparent", // Set to transparent to allow the background image to be visible
+        }}
+      >
+        <Image
+          style={{ width: 40, height: 40, tintColor: isFavorite ? 'red' : 'white' }}
+          source={require("../path-to-heart-icon.png")} // Replace with the actual path to your heart icon
+        />
+      </TouchableOpacity>
+
+      <View
+        style={{
           flex: 1,
           alignItems: "center",
           justifyContent: "center",
           width: "100%",
-          marginBottom: -50,
         }}
-      >
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            width: "100%",
-            padding: 20,
-          }}
-        >
-          <TouchableOpacity
-            onPress={handleBack}
-            style={{
-              padding: 12,
-              borderWidth: 1,
-              width: 60,
-              backgroundColor: "white",
-              borderRadius: 16,
-              alignItems: "center",
-              borderColor: "white",
-              ...Platform.select({
-                ios: {
-                  shadowColor: "black",
-                  shadowOffset: { width: 0, height: 2 },
-                  shadowOpacity: 0.2,
-                  shadowRadius: 4,
-                },
-                android: {
-                  elevation: 4,
-                },
-              }),
-            }}
-          >
-            <Image
-              style={{ width: 20, height: 12 }}
-              source={require("../assets/images-icons/backArrow.png")}
-            />
-          </TouchableOpacity>
+      ></View>
+    </ImageBackground>
 
-          <TouchableOpacity
-            onPress={handleBack}
-            style={{
-              padding: 12,
-              borderWidth: 1,
-              width: 60,
-              backgroundColor: "white",
-              borderRadius: 16,
-              alignItems: "center",
-              justifyContent: "center",
-              borderColor: "white",
-              ...Platform.select({
-                ios: {
-                  shadowColor: "black",
-                  shadowOffset: { width: 0, height: 2 },
-                  shadowOpacity: 0.2,
-                  shadowRadius: 4,
-                },
-                android: {
-                  elevation: 4,
-                },
-              }),
-            }}
-          >
-            <Image
-              style={{ width: 26, height: 10 }}
-              source={require("../assets/images-icons/threeDots.png")}
-            />
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
-            width: "100%",
-          }}
-        ></View>
-      </ImageBackground>
 
       <View
         style={{

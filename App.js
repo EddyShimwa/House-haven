@@ -117,27 +117,6 @@ const App = () => {
             
           }}
         />
-
-<Tab.Screen
-  name="detaye"
-  component={HouseDetailsScreen}
-  options={{
-    tabBarIcon: ({ color, size }) => (
-      <Icon name="info" size={size} color={color} />
-    ),
-    tabBarStyle: {
-      backgroundColor: "#2f2f2f",
-      borderRadius: 12,
-      height: 60,
-      padding: 10,
-      margin: 20,
-    },
-    tabBarLabel: "",
-    tabBarActiveTintColor: "#fff",
-    headerShown: false,
-    tabBarVisible: false,
-  }}
-/>
       </Tab.Navigator>
     </NavigationContainer>
   );
