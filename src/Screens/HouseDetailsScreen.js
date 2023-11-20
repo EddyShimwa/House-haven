@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   View,
   Text,
@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import HouseImgs from "../Components/HouseImages";
-// import { ScrollView } from "react-native-gesture-handler";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const HouseDetailsScreen = ({ route }) => {
   const { houseId } = route.params;
@@ -23,13 +23,17 @@ const HouseDetailsScreen = ({ route }) => {
   //   require("../assets/images-icons/house2.jpg"),
   //   require("../assets/images-icons/house1.jpg"),
   // ];
-
+  const [isFavorite, setIsFavorite] = useState(false);
   const handleBack = () => {
     navigation.goBack();
   };
 
   const handleAddToFavorites = () => {
+    setIsFavorite(!isFavorite);
+    if(!isFavorite) 
     console.log('You added this house to your favorites!')
+  else 
+  console.log('You removed this house from your favorites!')
   }
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -123,14 +127,15 @@ const HouseDetailsScreen = ({ route }) => {
         onPress={handleAddToFavorites}
         style={{
           position: 'absolute',
-          bottom: 20,
+          bottom: 50,
           right: 20,
           backgroundColor: "transparent", // Set to transparent to allow the background image to be visible
         }}
       >
-        <Image
-          style={{ width: 40, height: 40, tintColor: isFavorite ? 'red' : 'white' }}
-          source={require("../path-to-heart-icon.png")} // Replace with the actual path to your heart icon
+        <Icon
+          style={{ width: 50, height: 40, color: isFavorite ? 'red' : 'white' }}
+          name="heart"
+          size={35}
         />
       </TouchableOpacity>
 
