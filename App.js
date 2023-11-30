@@ -1,13 +1,15 @@
-import * as React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Icon from "react-native-vector-icons/FontAwesome";
-import { NavigationContainer } from "@react-navigation/native";
-import HomeScreen from "./src/Screens/HomeScreen";
-import NotificationsScreen from "./src/Screens/NotificationsScreen";
-import AboutScreen from "./src/Screens/AboutScreen";
-import Favorites from "./src/Screens/FavoritesScreen";
-import HouseDetailsScreen from "./src/Screens/HouseDetailsScreen";
-import { createStackNavigator } from "@react-navigation/stack";
+// App.js
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { NavigationContainer } from '@react-navigation/native';
+import HomeScreen from './src/Screens/HomeScreen';
+import NotificationsScreen from './src/Screens/NotificationsScreen';
+import AboutScreen from './src/Screens/AboutScreen';
+import Favorites from './src/Screens/FavoritesScreen';
+import HouseDetailsScreen from './src/Screens/HouseDetailsScreen';
+import { createStackNavigator } from '@react-navigation/stack';
+import SplashScreen from './src/Screens/SplashScreen'; // Import the splash screen component
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -17,12 +19,12 @@ const HomeStack = () => {
     <Stack.Navigator headerMode="none">
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen
-  name="HouseDetails"
-  component={HouseDetailsScreen}
-  options={{
-    tabBarVisible: false,
-  }}
-/>
+        name="HouseDetails"
+        component={HouseDetailsScreen}
+        options={{
+          tabBarVisible: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };
@@ -30,30 +32,32 @@ const HomeStack = () => {
 const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName="Home"
-      >
-        <Tab.Screen
-          name="Home"
-          component={HomeStack}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="home" size={size} color={color} />
-            ),
-            tabBarStyle: {
-              backgroundColor: "#2f2f2f",
-              borderRadius: 12,
-              height: 60,
-              padding: 10,
-              margin: 20,
-            },
-            tabBarLabel: "",
-            tabBarActiveTintColor: "#fff",
-            headerShown: false,
-          }}
-        />
-
-        <Tab.Screen
+      <Stack.Navigator headerMode="none">
+        <Stack.Screen name="Splash" component={SplashScreen} />
+        <Stack.Screen
+          name="App"
+          component={() => (
+            <Tab.Navigator initialRouteName="Home">
+              <Tab.Screen
+                name="Home"
+                component={HomeStack}
+                options={{
+                  tabBarIcon: ({ color, size }) => (
+                    <Icon name="home" size={size} color={color} />
+                  ),
+                  tabBarStyle: {
+                    backgroundColor: '#2f2f2f',
+                    borderRadius: 12,
+                    height: 60,
+                    padding: 10,
+                    margin: 20,
+                  },
+                  tabBarLabel: '',
+                  tabBarActiveTintColor: '#fff',
+                  headerShown: false,
+                }}
+              />
+                     <Tab.Screen
           name=" "
           component={Favorites}
           options={{
@@ -117,7 +121,12 @@ const App = () => {
             
           }}
         />
-      </Tab.Navigator>
+              {/* Add your other Tab.Screen components here */}
+            </Tab.Navigator>
+          )}
+        />
+
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

@@ -26,8 +26,8 @@ const Favorites = () => {
 
   return (
     <>
-    <View style={{marginTop: 50, }}>
-     <Text>My Favorites</Text>
+    <View style={{marginTop: 50,  }}>
+     <Text style={{textAlign: 'center', fontSize: 30, fontWeight: 'bold'  }}  >My Favoritess</Text>
      </View>
      <ScrollView vertical={true} contentContainerStyle={{ margin: 10 }}>
         {favoriteHouses.map((favoriteHouse) => (
