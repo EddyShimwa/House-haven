@@ -7,18 +7,15 @@ import backgroundImage from '../assets/images-icons/houseBG.jpeg';
 
 const SplashScreen = ({ navigation }) => {
   const [isLoading, setIsLoading] = useState(true);
-
   const navigateToApp = () => {
-    navigation.replace('App'); // Navigate to the main app screen
+    navigation.replace('App'); 
   };
 
   useEffect(() => {
-    // Simulate a loading delay, you can replace this with your actual loading logic
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 10000); // 10000 milliseconds (10 seconds)
+    }, 10000); 
 
-    // Clear the timeout if the component unmounts
     return () => clearTimeout(timeout);
   }, []);
 

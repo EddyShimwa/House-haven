@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -9,14 +8,14 @@ import AboutScreen from './src/Screens/AboutScreen';
 import Favorites from './src/Screens/FavoritesScreen';
 import HouseDetailsScreen from './src/Screens/HouseDetailsScreen';
 import { createStackNavigator } from '@react-navigation/stack';
-import SplashScreen from './src/Screens/SplashScreen'; // Import the splash screen component
+import SplashScreen from './src/Screens/SplashScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator headerMode="none">
+    <Stack.Navigator headerShown='false'>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen
         name="HouseDetails"
