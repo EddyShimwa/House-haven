@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#fff',
-    borderRadius: 50,
+    borderRadius: 48,
     padding: 20,
     marginTop: 200,
   },
