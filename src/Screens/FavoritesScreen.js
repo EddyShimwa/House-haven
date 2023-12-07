@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, ScrollView, TouchableOpacity, Image } from "react-native";
+import { Text, View, ScrollView, TouchableOpacity, Image, Platform } from "react-native";
 
 const imgs = [
   require("../assets/images-icons/house3.jpg"),
@@ -59,6 +59,7 @@ const Favorites = () => {
               }}
               />
               <Text style={{marginRight: 20 }}>{favoriteHouse.title}</Text>
+              <TouchableOpacity>Remove</TouchableOpacity>
           </View>
 
           </TouchableOpacity>

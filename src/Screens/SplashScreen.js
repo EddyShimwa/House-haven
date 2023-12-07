@@ -28,7 +28,7 @@ const SplashScreen = ({ navigation }) => {
           Now you can find your dream house easily and quickly at a low price
         </Text>
         {isLoading ? (
-          <ActivityIndicator size="large" color="#00ff00" /> // Green color for the spinner
+          <ActivityIndicator size="large" color="#fff" /> 
         ) : (
           <View style={styles.footer}>
             <Text style={styles.footerText}>Powered By TechLab</Text>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   greenText: {
-    color: '#00ff00', // Green color
+    color: '#00ff00', 
   },
   subtitle: {
     fontSize: 16,

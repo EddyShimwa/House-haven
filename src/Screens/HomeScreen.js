@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, Platform } from "react-native";
 import HomePageHeader from "../Components/HomePageHeader";
 import { Icon, SearchBar } from "react-native-elements";
 import Categories from "../Components/Categories";

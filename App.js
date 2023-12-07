@@ -15,7 +15,7 @@ const Stack = createStackNavigator();
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator headerShown='false'>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen
         name="HouseDetails"
@@ -31,7 +31,7 @@ const HomeStack = () => {
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none">
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen
           name="App"
@@ -120,7 +120,6 @@ const App = () => {
             
           }}
         />
-              {/* Add your other Tab.Screen components here */}
             </Tab.Navigator>
           )}
         />
