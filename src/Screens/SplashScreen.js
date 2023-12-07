@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import FeatherIcon from 'react-native-vector-icons/Feather';
-import { ProgressBarAndroid } from '@react-native-community/progress-bar-android';
+import { View, Text, StyleSheet, ImageBackground, ActivityIndicator } from 'react-native';
 import backgroundImage from '../assets/images-icons/houseBG.jpeg';
 
 const SplashScreen = ({ navigation }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const navigateToApp = () => {
-    navigation.replace('App'); 
-  };
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 10000); 
+      navigation.replace('App');
+    }, 5000);
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [navigation]);
 
   const title = 'Find Your Dream Home ';
   const title2 = 'EASILY';
@@ -25,24 +20,19 @@ const SplashScreen = ({ navigation }) => {
   return (
     <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
       <View style={styles.container}>
+        <Text style={styles.title}>
+          {title.toLocaleUpperCase()}
+          <Text style={styles.greenText}>{title2}</Text>
+        </Text>
+        <Text style={styles.subtitle}>
+          Now you can find your dream house easily and quickly at a low price
+        </Text>
         {isLoading ? (
-          <>
-            <ProgressBarAndroid styleAttr="Horizontal" indeterminate={false} progress={0.5} color="#fff" />
-            <Text style={styles.title}>{title.toLocaleUpperCase()}{title2}</Text>
-            <Text style={styles.subtitle}>
-              Now you can find your dream house easily and quickly at a low price
-            </Text>
-          </>
+          <ActivityIndicator size="large" color="#00ff00" /> // Green color for the spinner
         ) : (
-          <>
-            <Text style={styles.title}>{title.toLocaleUpperCase()}{title2}</Text>
-            <Text style={styles.subtitle}>
-              Now you can find your dream house easily and quickly at a low price
-            </Text>
-            <TouchableOpacity style={styles.button} onPress={navigateToApp}>
-              <FeatherIcon name="play" size={24} color="#000" />
-            </TouchableOpacity>
-          </>
+          <View style={styles.footer}>
+            <Text style={styles.footerText}>Powered By TechLab</Text>
+          </View>
         )}
       </View>
     </ImageBackground>
@@ -68,6 +58,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#fff',
   },
+  greenText: {
+    color: '#00ff00', // Green color
+  },
   subtitle: {
     fontSize: 16,
     textAlign: 'center',
@@ -75,13 +68,12 @@ const styles = StyleSheet.create({
     color: '#fff',
     width: '80%',
   },
-  button: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    borderRadius: 48,
-    padding: 20,
-    marginTop: 200,
+  footer: {
+    position: 'absolute',
+    bottom: 20,
+  },
+  footerText: {
+    color: '#fff',
   },
 });
 
